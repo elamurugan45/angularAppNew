@@ -1,4 +1,26 @@
 <h1>Welcome to the AngularApp!</h1>
-<div app-test>
+<app-test></app-test>
+<app-header></app-header>
 
-</div>  
+<img [src]="image" alt="">
+
+<button disabled="{{isDisabled}}">Disabled string interpolation</button>
+<button [disabled]="isDisabled">Disabled property binding</button>
+<br>
+
+<button [class.active]="isActive" [class.noActive]="!isActive">click me</button>
+<br>
+<button 
+[style.background]="isActive ? 'red' : 'green'"
+[style.border]="isActive ? '3px solid blue' : ''"
+>click me</button>
+
+<br>
+<input type="text" (keyup)="keyCode($event)">
+
+<br>
+<input type="text" [(ngModel)]="userName">
+
+<h3>{{userName}}</h3>
+
+<input type="text" [value]="userName" (keyup.enter)="onKeyup()">
